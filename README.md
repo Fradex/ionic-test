@@ -1,29 +1,23 @@
-# README #
+﻿# Товары пользователей (WebApi 2 + Angular 4)
+ Представлено 3 формы:
+  - Пользователи
+  - Товары пользователей
+  - Товары
 
-This README would normally document whatever steps are necessary to get your application up and running.
+Данные на формах можно добавлять, редактировать, удалять.
 
-### What is this repository for? ###
+# Связи БД
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+    - Пользователь (User)
+    - Товары (Goods)
+    - Товары пользователей (UserGoods), зависят от Товаров и Пользователей
+# Tech
 
-### How do I get set up? ###
+* [AngularJS](https://angular.io/) - web представление
+* [Twitter Bootstrap] - css стили
+* Typescript
+* [ASP.Net MVC](https://www.asp.net/mvc) - MVC
+* EntityFramework 6 - ORM
+* ASP.Net Web Api 2 - API
+* LocalDB - БД
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
-
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
