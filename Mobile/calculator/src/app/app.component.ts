@@ -5,8 +5,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HistoryPage } from '../pages/history/history';
 import { ChartPage } from '../pages/chart/chart';
-
-
 import { CalcPage } from '../pages/calc/calc';
 
 

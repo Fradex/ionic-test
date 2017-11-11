@@ -3,24 +3,26 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>
-      calc
-    </ion-title>
+
+    <ion-segment [(ngModel)]="segment">
+        <ion-segment-button value="credit" isActive="true">
+          Кредит
+        </ion-segment-button>
+        <ion-segment-button value="realty">
+          Недвижимость
+        </ion-segment-button>
+      </ion-segment>
   </ion-navbar>
 </ion-header>
-<ion-content padding id="page1">
-  <form id="calc-form7">
-    <ion-item id="calc-toggle1">
-      <ion-label>
-        По стоимости кредита
-      </ion-label>
-      <ion-toggle color="positive" checked="false"></ion-toggle>
-    </ion-item>
-    <ion-item id="calc-select2">
+<ion-content padding id="calc">
+  <form id="calc-form">
+    <ion-item id="calc-select">
       <ion-label>
         Валюта
       </ion-label>
-      <ion-select name="valute"></ion-select>
+      <ion-select name="currenciesSelect">
+          <ion-option *ngFor="let item of currencies" [value] = "item.id">{{item.name}}</ion-option>
+      </ion-select>
     </ion-item>
     <ion-item id="calc-input4">
       <ion-label>
