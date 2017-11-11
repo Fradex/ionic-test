@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      calc
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="page1">
+  <form id="calc-form7">
+    <ion-item id="calc-toggle1">
+      <ion-label>
+        По стоимости кредита
+      </ion-label>
+      <ion-toggle color="positive" checked="false"></ion-toggle>
+    </ion-item>
+    <ion-item id="calc-select2">
+      <ion-label>
+        Валюта
+      </ion-label>
+      <ion-select name="valute"></ion-select>
+    </ion-item>
+    <ion-item id="calc-input4">
+      <ion-label>
+        Сумма кредита
+      </ion-label>
+      <ion-input type="number" placeholder="" name="creditSum"></ion-input>
+    </ion-item>
+    <ion-item id="calc-input5">
+      <ion-label>
+        Процентная ставка (%)
+      </ion-label>
+      <ion-input type="number" placeholder="" name="creditProcent"></ion-input>
+    </ion-item>
+    <ion-list radio-group>
+      <ion-list-header>
+        Вид платежа
+      </ion-list-header>
+      <ion-item>
+        <ion-label>Дифференцируемый</ion-label>
+        <ion-radio checked="true"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Аннуитивный</ion-label>
+        <ion-radio></ion-radio>
+      </ion-item>
+    </ion-list>
+    <ion-item id="calc-input6">
+      <ion-label>
+        Начало выплат
+      </ion-label>
+      <ion-input type="date" placeholder=""></ion-input>
+    </ion-item>
+  </form>
+  <button id="calculate" ion-button clear color="positive" block style="border-radius:5px 0px 0px 0px;">
+    Рассчитать
+  </button>
+</ion-content>

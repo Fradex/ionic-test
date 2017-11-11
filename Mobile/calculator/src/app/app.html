@@ -1,0 +1,27 @@
+<ion-menu [content]="mainContent">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>
+        Ипотечный калькулятор
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content id="side-menu21" class="Navigation">
+    <ion-list id="side-menu21-list1">
+      <ion-item color="none" menuClose="" on-click="goToCalc()" id="side-menu21-list-item1">
+        Калькулятор
+        <ion-icon name="calculator" item-right></ion-icon>
+      </ion-item>
+      <ion-item color="none" menuClose="" on-click="goToHistory()" id="side-menu21-list-item2">
+        История расчетов
+        <ion-icon name="bookmark" item-right></ion-icon>
+      </ion-item>
+      <ion-item color="none" menuClose="" on-click="goToChart()" id="side-menu21-list-item3">
+        Графики
+        <ion-icon name="podium" item-right></ion-icon>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-nav #mainContent [root]="rootPage"></ion-nav>
