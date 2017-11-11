@@ -1,5 +1,5 @@
 /***Валюты */
-export let currencies: any[] = [{
+export let currencyItems: any[] = [{
     id: 2,
     name: "Доллар"
 }, {
