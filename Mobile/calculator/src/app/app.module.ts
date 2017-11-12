@@ -9,13 +9,21 @@ import { ChartPage } from '../pages/chart/chart';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import {PaymentsMain} from "../pages/payments/main/payments-main";
+import {PaymentsCards} from "../pages/payments/cards/payments-cards";
+import {PaymentsCharts} from "../pages/payments/charts/payments-charts";
+import {PaymentsGrid} from "../pages/payments/grid/payments-grid";
 
 @NgModule({
   declarations: [
     MyApp,
     CalcPage,
     HistoryPage,
-    ChartPage
+    ChartPage,
+    PaymentsMain,
+    PaymentsCards,
+    PaymentsCharts,
+    PaymentsGrid
   ],
   imports: [
     BrowserModule,
@@ -28,7 +36,11 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     CalcPage,
     HistoryPage,
-    ChartPage
+    ChartPage,
+    PaymentsMain,
+    PaymentsCards,
+    PaymentsCharts,
+    PaymentsGrid
   ],
   providers: [
     StatusBar,

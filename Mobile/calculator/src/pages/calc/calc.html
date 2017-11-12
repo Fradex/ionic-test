@@ -3,18 +3,13 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-segment [(ngModel)]="segment">
-      <ion-segment-button value="credit" isActive="true">
-        Кредит
-      </ion-segment-button>
-      <ion-segment-button value="realty">
-        Недвижимость
-      </ion-segment-button>
-    </ion-segment>
+    <ion-card-header>
+        Фильтр
+    </ion-card-header>
   </ion-navbar>
 </ion-header>
 <ion-content padding id="calc">
-  <form [formGroup]="form">
+  <form #form="ngForm">
     <ion-list radio-group>
       <ion-list-header>
         Вид платежа
@@ -24,44 +19,51 @@
         <ion-radio checked="true"></ion-radio>
       </ion-item>
       <ion-item>
-        <ion-label>Аннуитивный</ion-label>
+        <ion-label>Аннуитентный</ion-label>
         <ion-radio></ion-radio>
       </ion-item>
     </ion-list>
     <ion-item id="calcSelect">
       <ion-label>
-        Валюта
+        Валюта*
       </ion-label>
-      <ion-select name="currency">
-        <ion-option *ngFor="let item of currencies" [value]="item.id">{{item.name}}</ion-option>
+      <ion-select name="currency" [(ngModel)]="model.currency"  required>
+        <ion-option *ngFor="let item of currencies" [value]="item.id">{{item.name}} </ion-option>
       </ion-select>
     </ion-item>
-    <ion-item id="creditSum">
+    <ion-item id="realtySum">
       <ion-label>
-        Сумма кредита
+        Сумма недвижимости*
       </ion-label>
-      <ion-input type="number" placeholder="" name="creditSum"></ion-input>
+      <ion-input type="number" placeholder="" name="realtySum" [(ngModel)]="model.realtySum" required ></ion-input>
+    </ion-item>
+    <ion-item id="realtySum">
+      <ion-label>
+        Первоначальный взнос*
+      </ion-label>
+      <ion-input type="number" placeholder="" name="initialFee" [(ngModel)]="model.initialFee"   required></ion-input>
     </ion-item>
     <ion-item id="creditProcent">
       <ion-label>
-        Процентная ставка (%)
+        Процентная ставка (%)*
       </ion-label>
-      <ion-input type="number" placeholder="" name="creditProcent"></ion-input>
+      <ion-input type="number" placeholder="" name="creditProcent" [(ngModel)]="model.creditProcent" required></ion-input>
     </ion-item>
     <ion-item id="creditTerm">
       <ion-label>
-        Срок кредита (мес.)
+        Срок кредита (мес.)*
       </ion-label>
-      <ion-input type="number" placeholder="" name="creditTerm"></ion-input>
+      <ion-input type="number" placeholder="" name="creditTerm"  [(ngModel)]="model.creditTerm" required></ion-input>
     </ion-item>
     <ion-item id="creditBegin">
       <ion-label>
-        Начало выплат
+        Начало выплат*
       </ion-label>
-      <ion-datetime displayFormat="DD MMM YYYY" max="2056" doneText='Выбрать' cancelText='Отменить' name='creditBegin'></ion-datetime>
+      <ion-datetime displayFormat="DD MMM YYYY" max="2056" doneText='Выбрать' cancelText='Отменить' name='creditBegin' [(ngModel)]="model.creditBegin" required></ion-datetime>
     </ion-item>
   </form>
-  <button id="calculate" ion-button clear color="positive" block style="border-radius:5px 0px 0px 0px;" [disabled]="!form.valid">
+  <p>* Необходимо заполнить обязательные поля.</p>
+  <button id="calculate" ion-button clear color="positive" block style="border-radius:5px 0px 0px 0px;" [disabled]="!form.form.valid" on-click="calculate()">
     Рассчитать
   </button>
 </ion-content>

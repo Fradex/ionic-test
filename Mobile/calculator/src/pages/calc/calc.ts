@@ -1,33 +1,39 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { ChartPage } from '../chart/chart';
 import { currencyItems } from '../../components/currency';
+import { PaymentsMain } from "../payments/main/payments-main";
+import { OnInit } from '@angular/core';
 import {
   FormBuilder,
   FormGroup,
-  Validators
+  Validators,
+  FormControl
 } from '@angular/forms';
 
-/***Модуль расчета */
+/***Модуль фильтров */
 @Component({
   selector: 'page-calc',
   templateUrl: 'calc.html'
 })
-export class CalcPage {
-  currencies: any[] = [{
-    id: 2,
-    name: "Доллар"
-  }, {
-    id: 1,
-    name: "Рубль"
-  }];
+export class CalcPage implements OnInit  {
+  currencies: any[];
   segment: string;
-  public form: FormGroup;
+  model = {
+    currency : 1
+  };
 
-  constructor(public navCtrl: NavController, private _fb: FormBuilder) {
+  constructor(public navCtrl: NavController) {
+  }
+
+  /** Обработчик чобытия инициализации формы */
+  ngOnInit(){
     this.segment = "credit";
-    this.form = _fb.group({
-      'creditSum': ['', Validators.required]
-    });
+    this.currencies = currencyItems;
+    this.model.currency = 1;
+  }
+
+  /** Рассчитать */
+  calculate() {
+    this.navCtrl.setRoot(PaymentsMain);
   }
 }
