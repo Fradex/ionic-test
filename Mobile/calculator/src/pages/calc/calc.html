@@ -14,7 +14,7 @@
   </ion-navbar>
 </ion-header>
 <ion-content padding id="calc">
-  <form id="calcForm">
+  <form [formGroup]="form">
     <ion-list radio-group>
       <ion-list-header>
         Вид платежа
@@ -28,11 +28,11 @@
         <ion-radio></ion-radio>
       </ion-item>
     </ion-list>
-    <ion-item id="calc-select">
+    <ion-item id="calcSelect">
       <ion-label>
         Валюта
       </ion-label>
-      <ion-select name="currencies">
+      <ion-select name="currency">
         <ion-option *ngFor="let item of currencies" [value]="item.id">{{item.name}}</ion-option>
       </ion-select>
     </ion-item>
@@ -43,11 +43,11 @@
       <ion-input type="number" placeholder="" name="creditSum"></ion-input>
     </ion-item>
     <ion-item id="creditProcent">
-        <ion-label>
-          Процентная ставка (%)
-        </ion-label>
-        <ion-input type="number" placeholder="" name="creditProcent"></ion-input>
-      </ion-item>
+      <ion-label>
+        Процентная ставка (%)
+      </ion-label>
+      <ion-input type="number" placeholder="" name="creditProcent"></ion-input>
+    </ion-item>
     <ion-item id="creditTerm">
       <ion-label>
         Срок кредита (мес.)
@@ -58,10 +58,10 @@
       <ion-label>
         Начало выплат
       </ion-label>
-      <ion-datetime displayFormat="DD MMM YYYY" max="2056"></ion-datetime>
+      <ion-datetime displayFormat="DD MMM YYYY" max="2056" doneText='Выбрать' cancelText='Отменить' name='creditBegin'></ion-datetime>
     </ion-item>
   </form>
-  <button id="calculate" ion-button clear color="positive" block style="border-radius:5px 0px 0px 0px;" ng-disabled="calcForm.$invalid">
+  <button id="calculate" ion-button clear color="positive" block style="border-radius:5px 0px 0px 0px;" [disabled]="!form.valid">
     Рассчитать
   </button>
 </ion-content>
