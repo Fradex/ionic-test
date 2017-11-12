@@ -31,30 +31,54 @@
         <ion-option *ngFor="let item of currencies" [value]="item.id">{{item.name}} </ion-option>
       </ion-select>
     </ion-item>
-    <ion-item id="realtySum">
-      <ion-label>
-        Сумма недвижимости *
-      </ion-label>
-      <ion-input type="number" placeholder="" name="realtySum" [(ngModel)]="model.realtySum" required ></ion-input>
-    </ion-item>
-    <ion-item id="realtySum">
-      <ion-label>
-        Первоначальный взнос *
-      </ion-label>
-      <ion-input type="number" placeholder="" name="initialFee" [(ngModel)]="model.initialFee"   required></ion-input>
-    </ion-item>
-    <ion-item id="creditProcent">
-      <ion-label>
-        Процентная ставка (%) *
-      </ion-label>
-      <ion-input type="number" placeholder="" name="creditProcent" [(ngModel)]="model.creditProcent" required></ion-input>
-    </ion-item>
-    <ion-item id="creditTerm">
-      <ion-label>
-        Срок кредита (мес.) *
-      </ion-label>
-      <ion-input type="number" placeholder="" name="creditTerm"  [(ngModel)]="model.creditTerm" required></ion-input>
-    </ion-item>
+    <ion-list>
+      <ion-list-header>
+        Стоимость недвижимости
+        <ion-badge item-end>{{model.realtySum}} руб.</ion-badge>
+      </ion-list-header>
+      <ion-item >
+        <ion-range min="0" step="1000" max="20000000" pin="true" name="realtySum" [(ngModel)]="model.realtySum">
+          <ion-label range-left>0</ion-label>
+          <ion-label range-right>20000000</ion-label>
+        </ion-range>
+      </ion-item>
+    </ion-list>
+    <ion-list>
+      <ion-list-header>
+        Первоначальный взнос
+        <ion-badge item-end>{{model.initialFee}} руб.</ion-badge>
+      </ion-list-header>
+      <ion-item >
+        <ion-range min="0" step="1000" max="{{model.realtySum}}" pin="true" name="initialFee" [(ngModel)]="model.initialFee">
+          <ion-label range-left>0</ion-label>
+          <ion-label range-right>{{model.realtySum}}</ion-label>
+        </ion-range>
+      </ion-item>
+    </ion-list>
+    <ion-list>
+      <ion-list-header>
+        Процентная ставка (%)
+        <ion-badge item-end color="secondary">{{model.creditProcent}}%</ion-badge>
+      </ion-list-header>
+      <ion-item>
+        <ion-range min="0" max="100" pin="true" name="creditProcent" [(ngModel)]="model.creditProcent" color="secondary">
+          <ion-label range-left>0</ion-label>
+          <ion-label range-right>100</ion-label>
+        </ion-range>
+      </ion-item>
+    </ion-list>
+    <ion-list>
+      <ion-list-header>
+        Срок кредита (мес.)
+        <ion-badge item-end color="secondary">{{model.creditTerm}} мес.</ion-badge>
+      </ion-list-header>
+      <ion-item>
+        <ion-range min="1" max="360" pin="true" name="creditTerm" [(ngModel)]="model.creditTerm" color="secondary">
+          <ion-label range-left>1</ion-label>
+          <ion-label range-right>360</ion-label>
+        </ion-range>
+      </ion-item>
+    </ion-list>
     <ion-item id="creditBegin">
       <ion-label>
         Начало выплат *

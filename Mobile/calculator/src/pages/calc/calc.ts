@@ -19,7 +19,11 @@ export class CalcPage implements OnInit  {
   currencies: any[];
   segment: string;
   model = {
-    currency : 1
+    currency : 1,
+    creditProcent: 0,
+    initialFee: 1000,
+    creditTerm: 1,
+    realtySum: 1000
   };
 
   constructor(public navCtrl: NavController) {
@@ -29,7 +33,6 @@ export class CalcPage implements OnInit  {
   ngOnInit(){
     this.segment = "credit";
     this.currencies = currencyItems;
-    this.model.currency = 1;
   }
 
   /** Рассчитать */
