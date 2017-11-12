@@ -25,7 +25,7 @@
     </ion-list>
     <ion-item id="calcSelect">
       <ion-label>
-        Валюта*
+        Валюта *
       </ion-label>
       <ion-select name="currency" [(ngModel)]="model.currency"  required>
         <ion-option *ngFor="let item of currencies" [value]="item.id">{{item.name}} </ion-option>
@@ -33,31 +33,31 @@
     </ion-item>
     <ion-item id="realtySum">
       <ion-label>
-        Сумма недвижимости*
+        Сумма недвижимости *
       </ion-label>
       <ion-input type="number" placeholder="" name="realtySum" [(ngModel)]="model.realtySum" required ></ion-input>
     </ion-item>
     <ion-item id="realtySum">
       <ion-label>
-        Первоначальный взнос*
+        Первоначальный взнос *
       </ion-label>
       <ion-input type="number" placeholder="" name="initialFee" [(ngModel)]="model.initialFee"   required></ion-input>
     </ion-item>
     <ion-item id="creditProcent">
       <ion-label>
-        Процентная ставка (%)*
+        Процентная ставка (%) *
       </ion-label>
       <ion-input type="number" placeholder="" name="creditProcent" [(ngModel)]="model.creditProcent" required></ion-input>
     </ion-item>
     <ion-item id="creditTerm">
       <ion-label>
-        Срок кредита (мес.)*
+        Срок кредита (мес.) *
       </ion-label>
       <ion-input type="number" placeholder="" name="creditTerm"  [(ngModel)]="model.creditTerm" required></ion-input>
     </ion-item>
     <ion-item id="creditBegin">
       <ion-label>
-        Начало выплат*
+        Начало выплат *
       </ion-label>
       <ion-datetime displayFormat="DD MMM YYYY" max="2056" doneText='Выбрать' cancelText='Отменить' name='creditBegin' [(ngModel)]="model.creditBegin" required></ion-datetime>
     </ion-item>
