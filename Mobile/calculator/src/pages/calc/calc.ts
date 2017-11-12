@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
-import { ChartPage } from '../chart/chart';
-import { currencyItems } from '../../components/currency';
+import {Component, ViewChild} from '@angular/core';
+import {Nav, NavController} from 'ionic-angular';
+import {ChartPage} from '../chart/chart';
+import {currencyItems} from '../../components/currency';
+import {PaymentsMain} from "../payments/main/payments-main";
 
 /***Модуль расчета */
 @Component({
@@ -13,7 +14,12 @@ export class CalcPage {
   segment: string;
 
   constructor(public navCtrl: NavController) {
+
     this.currencies = currencyItems;
     this.segment = "credit";
+  }
+
+  calculate() {
+    this.navCtrl.setRoot(PaymentsMain);
   }
 }

@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Выплаты по кредиту
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-fab bottom right style="margin-bottom: 65px">
+    <button ion-fab>
+      <ion-icon name="add"></ion-icon>
+    </button>
+    <ion-fab-list side="top">
+      <button ion-fab on-click="saveCalculation()"><ion-icon name="bookmark"></ion-icon></button>
+      <button ion-fab on-click="shareCalculation()"><ion-icon name="share"></ion-icon></button>
+    </ion-fab-list>
+  </ion-fab>
+  <ion-tabs>
+    <ion-tab tabTitle="Выплаты" tabIcon="cash" [root]="paymentsCards"></ion-tab>
+    <ion-tab tabTitle="График" tabIcon="podium" [root]="paymentsCharts"></ion-tab>
+    <ion-tab tabTitle="Список" tabIcon="grid" [root]="paymentsGrid"></ion-tab>
+  </ion-tabs>
+</ion-content>
