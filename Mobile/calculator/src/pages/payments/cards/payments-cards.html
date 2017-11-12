@@ -1,9 +1,9 @@
 <ion-content>
   <ion-card>
-    <ion-card-header>
+    <ion-card-header class="card-title">
       Сводная информация по кредиту
     </ion-card-header>
-    <ion-card-content>
+    <ion-card-content class="card-body">
       Основной долг: <span class="green-text">{{creditSummary.DebtSum}}</span><br/>
       Сумма переплат: <span class="red-text">{{creditSummary.OverpaySum}}</span><br/>
       Сумма кредита: <span class="blue-text">{{creditSummary.CreditSum}}</span><br/>
@@ -15,10 +15,10 @@
     </ion-card-header>
   </ion-card>
   <ion-card *ngFor="let item of payments">
-    <ion-card-header>
+    <ion-card-header class="card-title">
       Выплата №{{item.Number}} за {{item.Date | date:'dd.MM.yyyy'}}
     </ion-card-header>
-    <ion-card-content>
+    <ion-card-content class="card-body">
       Выплата по основному долгу: <span class="green-text">{{item.DebtPayment}}</span><br/>
       Выплата по процентам: <span class="red-text">{{item.PercentPayment}}</span><br/>
       Остаток по выплатам:  <span class="blue-text">{{item.Balance}}</span><br/>
