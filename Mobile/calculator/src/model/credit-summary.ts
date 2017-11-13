@@ -1,5 +1,5 @@
 //Сводная информация по кредиту
-export class CreditSummary{
+export class CreditSummary {
   //Ежемесячный платеж
   MonthlyPayment: number;
   //Сумма кредита

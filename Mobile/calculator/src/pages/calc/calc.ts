@@ -9,6 +9,7 @@ import {
   Validators,
   FormControl
 } from '@angular/forms';
+import {CalculationService} from "../../providers/calculation-service";
 
 /***Модуль фильтров */
 @Component({
@@ -26,7 +27,7 @@ export class CalcPage implements OnInit  {
     realtySum: 1000
   };
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, private calculationService: CalculationService) {
   }
 
   /** Обработчик чобытия инициализации формы */
@@ -37,6 +38,7 @@ export class CalcPage implements OnInit  {
 
   /** Рассчитать */
   calculate() {
+    this.calculationService.calculate();
     this.navCtrl.setRoot(PaymentsMain);
   }
 }
