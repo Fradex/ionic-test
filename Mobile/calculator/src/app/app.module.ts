@@ -13,6 +13,7 @@ import {PaymentsMain} from "../pages/payments/main/payments-main";
 import {PaymentsCards} from "../pages/payments/cards/payments-cards";
 import {PaymentsCharts} from "../pages/payments/charts/payments-charts";
 import {PaymentsGrid} from "../pages/payments/grid/payments-grid";
+import {CalculationService} from "../providers/calculation-service";
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import {PaymentsGrid} from "../pages/payments/grid/payments-grid";
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    CalculationService
   ]
 })
 export class AppModule {}

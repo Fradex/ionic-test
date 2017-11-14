@@ -1,7 +1,7 @@
 //Выплата
-export class Payment{
+export class Payment {
   // Номер платежа
-  Number:number;
+  Number: number;
   // Дата платежа
   Date: Date;
   // Остаток по выплатам
