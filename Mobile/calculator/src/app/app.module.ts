@@ -4,7 +4,6 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { CalcPage } from '../pages/calc/calc';
 import { HistoryPage } from '../pages/history/history';
-import { ChartPage } from '../pages/chart/chart';
 import { ChartModule } from 'angular-highcharts';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -20,7 +19,6 @@ import {CalculationService} from "../providers/calculation-service";
     MyApp,
     CalcPage,
     HistoryPage,
-    ChartPage,
     PaymentsMain,
     PaymentsCards,
     PaymentsCharts,
@@ -38,7 +36,6 @@ import {CalculationService} from "../providers/calculation-service";
     MyApp,
     CalcPage,
     HistoryPage,
-    ChartPage,
     PaymentsMain,
     PaymentsCards,
     PaymentsCharts,

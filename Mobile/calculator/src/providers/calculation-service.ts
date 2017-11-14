@@ -1,8 +1,10 @@
 import {Payment} from "../model/payment";
 import {CreditSummary} from "../model/credit-summary";
 import {CalculationResult} from "../model/calculation-result";
+import { Injectable } from "@angular/core";
 
 //Сервис расчета кредита
+@Injectable()
 export class CalculationService {
   payments: Payment[];
   creditSummary: CreditSummary;

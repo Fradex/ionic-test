@@ -14,7 +14,7 @@ import {CalculationService} from "../../providers/calculation-service";
 /***Модуль фильтров */
 @Component({
   selector: 'page-calc',
-  templateUrl: 'calc.html'
+  templateUrl: 'calc.html',
 })
 export class CalcPage implements OnInit  {
   currencies: any[];

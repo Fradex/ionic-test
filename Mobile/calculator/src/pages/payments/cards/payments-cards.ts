@@ -5,7 +5,7 @@ import {CalculationService} from "../../../providers/calculation-service";
 
 @Component({
   selector: 'payments-cards',
-  templateUrl: 'payments-cards.html'
+  templateUrl: 'payments-cards.html',
 })
 export class PaymentsCards{
   payments: Payment[];
