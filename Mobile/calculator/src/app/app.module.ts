@@ -5,7 +5,7 @@ import { MyApp } from './app.component';
 import { CalcPage } from '../pages/calc/calc';
 import { HistoryPage } from '../pages/history/history';
 import { ChartPage } from '../pages/chart/chart';
-
+import { ChartModule } from 'angular-highcharts';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -29,7 +29,8 @@ import {PaymentsGrid} from "../pages/payments/grid/payments-grid";
     BrowserModule,
     IonicModule.forRoot(MyApp,{
       monthShortNames: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн', 'Июл', 'Авг', 'Сен', 'Окт ', 'Ноя', 'Дек' ]
-    })
+    }),
+    ChartModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

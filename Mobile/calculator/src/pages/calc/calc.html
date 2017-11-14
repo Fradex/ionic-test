@@ -4,7 +4,7 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-card-header>
-        Фильтр
+        Параметры
     </ion-card-header>
   </ion-navbar>
 </ion-header>
@@ -37,7 +37,7 @@
         <ion-badge item-end>{{model.realtySum}} руб.</ion-badge>
       </ion-list-header>
       <ion-item >
-        <ion-range min="0" step="1000" max="20000000" pin="true" name="realtySum" [(ngModel)]="model.realtySum">
+        <ion-range min="0" step="10000" max="20000000" pin="true" name="realtySum" [(ngModel)]="model.realtySum">
           <ion-label range-left>0</ion-label>
           <ion-label range-right>20000000</ion-label>
         </ion-range>
@@ -49,7 +49,7 @@
         <ion-badge item-end>{{model.initialFee}} руб.</ion-badge>
       </ion-list-header>
       <ion-item >
-        <ion-range min="0" step="1000" max="{{model.realtySum}}" pin="true" name="initialFee" [(ngModel)]="model.initialFee">
+        <ion-range min="0" step="10000" max="{{model.realtySum}}" pin="true" name="initialFee" [(ngModel)]="model.initialFee">
           <ion-label range-left>0</ion-label>
           <ion-label range-right>{{model.realtySum}}</ion-label>
         </ion-range>

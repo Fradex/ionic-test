@@ -1,3 +1,4 @@
+
 // http://ionicframework.com/docs/v2/theming/
 
 
@@ -25,4 +26,10 @@
 
 .blue-text {
   color:blue;
+}
+
+.toolbar-background {
+  background-image: url('../assets/imgs/header.png');
+  background-size: cover;
+  width: 100%;
 }

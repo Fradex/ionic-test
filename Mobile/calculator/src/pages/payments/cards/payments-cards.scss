@@ -5,10 +5,10 @@ payments-cards{
     width: 100%;
     font-weight: bold;
     color: white;
-    background-color: #337ab7;
+    background-image: url('../assets/imgs/header.png');
+    background-size: cover;
   }
 
 .card-body{
-    border-top: 2px solid #337ab7;
 }  
 }
